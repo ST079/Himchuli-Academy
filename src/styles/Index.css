@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f5f5;
+}
+
+header {
+  /* padding: 15px; */
+  margin-top: 2rem;
+}
+.head-items {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  padding: 10px;
+  width: 90%;
+  margin: auto;
+}
+.head-item {
+  list-style: none;
+  color: #ffffff;
+  > i {
+    margin-right: 2px;
+  }
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: #ede9e9;
+  /* padding: 2px; */
+  width: 90%;
+  margin: auto;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 15px;
+  padding: 5px;
+  margin: 0;
+}
+
+.nav-item {
+  list-style: none;
+  > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    font-size: 15px;
+  }
+}
+
+.nav-btn {
+  padding: 10px;
+  color: #ffffff;
+  background-color: #661818;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.banner {
+  position: absolute;
+  font-size: 8rem;
+  right: 5%;
+  top: -10%;
+  > i {
+    color: #6b2121;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  > img {
+    position: absolute;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    translate: -110% 50%;
+  }
+}
+
+/* landing page css */
+.landing-page-img {
+  background-image: url("../assets/building.jpg");
+  background-size: 1350px 839px;
+  background-attachment: fixed;
+  filter: blur(2px) contrast(150%) brightness(35%);
+  overflow: hidden;
+  height: 130vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.sm {
+  font-size: 15px !important;
+}
+
+.landing-content {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 5rem;
+  > h2,
+  h1 {
+    color: #ffffff;
+  }
+
+  > h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+
+  h1 {
+    font-family: "Cedarville Cursive", cursive;
+    margin-top: 2rem;
+    font-size: 5rem;
+    font-weight: 900;
+  }
+
+  > p {
+    color: #f5f5f5;
+    width: 60%;
+    font-weight: 600;
+  }
+}
+
+.landing-btns {
+  margin-top: 6rem;
+  padding: 5px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn1 {
+  color: white;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+}
+
+.btn2 {
+  padding: 10px;
+  color: #ffff;
+  background-color: #e55252;
+  border-radius: 10px;
+  border: none;
+}
+
+/* bg */
+.bg {
+  background-color: #ffff;
+  z-index: 1000;
+  min-height: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.head-line {
+  position: relative;
+  display: inline-block;
+}
+
+.head-line::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: #e55252;
+  bottom: -5px;
+}
+
+.line {
+  position: relative;
+  display: inline-block;
+}
+
+.line::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 30px;
+  top: 0; 
+  right: 20px;
+  background-color: #e55252;
+}
+
+
+
+.body-contents {
+  min-height: 100vh;
+  
+}
+
+/* second page */
+.second-page {
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr;
+  gap: 20px;
+}
+.box{
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+
+.video-box {
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  aspect-ratio: 12/9;
+  > iframe {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 10px;
+  }
+}
+.boards{
+  margin-top: 5rem;
+
+}
+.announcements,.admission{
+  padding: 10px;
+  margin: 10px;
+  min-height: 200px;
+  width: 100%;
+}
