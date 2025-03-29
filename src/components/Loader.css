@@ -9,14 +9,14 @@
 body {
   font-family: "poppins", sans-serif;
   height: 100vh;
+ 
 }
 
 .loading-page {
   position: absolute;
   top: 0;
   left: 0;
-  /* background: linear-gradient(to right, #2c5364, #203a43, #0f2027); */
-
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   height: 100%;
   width: 100%;
   display: flex;
@@ -29,9 +29,9 @@ body {
 #svg {
   height: 150px;
   width: 150px;
-  stroke:black;
+  stroke:rgb(206, 194, 194);
   fill-opacity: 0;
-  stroke-width: 2rem;
+  stroke-width: 1rem;
   stroke-dasharray: 5000;
   animation: draw 2s ease-in-out forwards;
 }

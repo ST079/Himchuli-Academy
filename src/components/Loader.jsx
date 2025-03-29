@@ -1,23 +1,9 @@
 import React from "react";
-import "../styles/Loader.css";
+import "./Loader.css";
 import { useState, useEffect } from "react";
-import Index from "../pages/Index";
 const Loader = () => {
-  const [showComponent, setShowComponent] = useState(true);
-
-  useEffect(() => {
-    // Hide the component after 3 seconds
-    const timer = setTimeout(() => {
-      setShowComponent(false);
-    }, 2000);
-
-    // Cleanup the timeout when the component unmounts
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div>
-      {showComponent && (
         <div className="loading-page">
           <svg
             id="svg"
@@ -540,9 +526,6 @@ const Loader = () => {
             </g>
           </svg>
         </div>
-      )}
-
-      {!showComponent && <Index />}
     </div>
   );
 };

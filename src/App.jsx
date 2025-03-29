@@ -1,14 +1,42 @@
-import Loader from "./components/Loader";
 import { Routes, Route } from "react-router-dom";
+import Loader from "./components/Loader";
 import Index from "./pages/Index";
+import UserLayout from "./layouts/UserLayout";
+import { useState,useEffect } from "react";
+import About from "./pages/About";
+import Acacemics from "./pages/Academics";
+import Admission from "./pages/Admission";
+import Services from "./pages/Services";
+import BeyondAcademics from "./pages/BeyondAcademics";
+import Contact from "./pages/Contact";
+
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <div>
-      <Routes>
-        <Route index element={<Loader />} />
-        <Route path="/" element={<Index />} />
-      </Routes>
-    </div>
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Routes>
+          {/* User Routes */}
+          <Route path="/" element={<UserLayout />}>
+            <Route index element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/academics" element={<Acacemics />} />
+            <Route path="/admission" element={<Admission />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/beyond-academics" element={<BeyondAcademics />} />
+          </Route>
+        </Routes>
+      )}
+    </>
   );
 };
 

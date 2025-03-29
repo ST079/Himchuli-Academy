@@ -10,84 +10,6 @@ body {
   background: #f5f5f5;
 }
 
-header {
-  /* padding: 15px; */
-  margin-top: 2rem;
-}
-.head-items {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 12px;
-  padding: 10px;
-  width: 90%;
-  margin: auto;
-}
-.head-item {
-  list-style: none;
-  color: #ffffff;
-  > i {
-    margin-right: 2px;
-  }
-}
-
-.nav {
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
-  /* align-items: center; */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  background-color: #ede9e9;
-  /* padding: 2px; */
-  width: 90%;
-  margin: auto;
-}
-
-.nav-items {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 15px;
-  padding: 5px;
-  margin: 0;
-}
-
-.nav-item {
-  list-style: none;
-  > a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #000;
-    font-size: 15px;
-  }
-}
-
-.nav-btn {
-  padding: 10px;
-  color: #ffffff;
-  background-color: #661818;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-.banner {
-  position: absolute;
-  font-size: 8rem;
-  right: 5%;
-  top: -10%;
-  > i {
-    color: #6b2121;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  }
-  > img {
-    position: absolute;
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    translate: -110% 50%;
-  }
-}
 
 /* landing page css */
 .landing-page-img {
@@ -198,8 +120,6 @@ header {
   background-color: #e55252;
 }
 
-
-
 .body-contents {
   min-height: 100vh;
   
@@ -219,15 +139,7 @@ header {
 
 .video-box {
   width: 100%;
-  height: 70%;
   overflow: hidden;
-  aspect-ratio: 12/9;
-  > iframe {
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    border-radius: 10px;
-  }
 }
 .boards{
   margin-top: 5rem;
@@ -238,4 +150,22 @@ header {
   margin: 10px;
   min-height: 200px;
   width: 100%;
+}
+
+.nav-btn:hover {
+  background-color: #e55252;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.school-description {
+  margin-top: 5rem;
+  padding: 10px;
+  width: 100%;
+  min-height: 200px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  text-align: justify;
 }

@@ -1,66 +1,10 @@
 import React from "react";
-import logo from "../assets/logo.png";
-import bg from "../assets/building.jpg";
-import "../styles/Index.css";
-import Navbar from "../layouts/Navbar";
+import "./Index.css";
+import YouTubeEmbed from "../components/YoutubeEmbed";
+import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <div>
-      <header>
-        {/* <!-- header section --> */}
-        <div className="head-info">
-          <ul className="head-items ">
-            <li className="head-item">
-              <i className="fa-solid fa-location-dot"></i>Myadhyapur Thimi - 07
-            </li>
-            <li className="head-item">
-              <i className="fa-solid fa-phone-volume"></i>01-6638441
-            </li>
-            <li className="head-item">
-              <i className="fa-solid fa-envelope"></i>himchuli.academy@gmail.com
-            </li>
-          </ul>
-        </div>
-        <div className="nav collapse navbar-collapse">
-          <ul className="nav-items">
-            <li className="nav-item">
-              <a href="">Home</a>
-            </li>
-            <li className="nav-item">
-              <a href="">About</a>
-            </li>
-            <li className="nav-item">
-              <a href="">Academics</a>
-            </li>
-            <li className="nav-item">
-              <a href="">Admissions</a>
-            </li>
-            <li className="nav-item">
-              <a href="">Services</a>
-            </li>
-            <li className="nav-item">
-              <a href="">Contact</a>
-            </li>
-            <li className="nav-item">
-              <a href="">Beyound Academics</a>
-            </li>
-            <li className="nav-item">
-              <a href="">Memories</a>
-            </li>
-            <li className="nav-item">
-              <button className="nav-btn">Apply Now</button>
-            </li>
-          </ul>
-          <div className="banner">
-            <i className="fa-solid fa-bookmark"></i>
-            <img src={logo} alt="" />
-          </div>
-        </div>
-      </header>
-      {/* <!-- header section ends here --> */}
-
-      <Navbar />
-
       <div className="landing-page-img"></div>
       <div className="landing-content">
         <h2>Center of Excellence since 2004</h2>
@@ -99,26 +43,47 @@ const Index = () => {
                 Welcome to <br /> Himchuli Academy
               </h2>
               <div className="video-box box mt-4">
-                <iframe
-                  src="https://www.youtube.com/embed/6NAu6hFtOc0?autoplay=1&loop=1&mute=1&playlist=6NAu6hFtOc0"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
+                <YouTubeEmbed videoId="6NAu6hFtOc0" />
               </div>
+              <p className="fs-6 mt-4 school-description">
+                Himchuli Academy is a progressive educational institution
+                dedicated to fostering a supportive and dynamic learning
+                environment for students. Himchuli Academy strives to inspire
+                creativity, critical thinking, and a lifelong love for learning
+                in its students, while actively engaging with the community to
+                promote meaningful education in Nepal.
+              </p>
             </div>
 
             <div className="boards d-flex flex-column fs-4 justify-content-center align-items-center">
               <div className="announcements box line">
-                <h3 className="fs-6">Announcements</h3>
+                <h3 className="fs-6 fw-bold">Announcements</h3>
               </div>
               <div className="admission box line">
-                <h3 className="fs-6">Admission Process</h3>
+                <div class="card-body">
+                  <h3 className="fs-6 fw-bold">Admission Process</h3>
+                  <p class="card-text fs-6">
+                    Welcome to the Himchuli Academy Admissions. We request you
+                    to fill out the application forms online. Currently, we are
+                    accepting applications for Grades III, IV, V, VI . Click the
+                    button below to apply now.
+                  </p>
+                  <Link to="/apply-now" class="btn nav-btn">
+                    Apply Forms
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Why Himchuli Page */}
+          <div className="why px-5">
+            <h2 className="fw-bolder fs-3 head-line">
+              Why Choose Himchuli Academy?
+            </h2>
+          </div>
+
+          {/* end */}
         </div>
       </div>
     </div>
