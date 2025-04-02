@@ -1,0 +1,15 @@
+.academics-img {
+  filter: blur(2px) contrast(150%) brightness(50%) !important;
+  overflow: hidden;
+  object-fit: center !important;
+  width: 100%;
+}
+
+
+/* Responsive styles for Coming Soon Page */
+@media (max-width: 768px) {
+
+  .carousel-inner{
+    height: 200px !important;
+  }
+}

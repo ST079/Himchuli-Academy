@@ -1,0 +1,137 @@
+.nav-btn {
+  padding: 10px;
+  color: #ffffff;
+  background-color:rgb(37, 78, 157);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #e55252 !important;
+  color: #ffffff !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+  display: inline-block;
+  transition: all 0.3s ease-in-out !important;
+}
+
+header {
+  /* padding: 15px; */
+  margin-top: 2rem;
+}
+.head-items {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  padding: 10px;
+  width: 90%;
+  margin: auto;
+  z-index: 1000 !important;
+}
+.head-item {
+  list-style: none;
+  > i {
+    margin-right: 2px;
+  }
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: #ede9e9;
+  /* padding: 2px; */
+  width: 90%;
+  margin: auto;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 15px;
+  padding: 5px;
+  margin: 0;
+}
+
+.nav-item {
+  list-style: none;
+  > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    font-size: 15px;
+  }
+}
+
+.nav-item:hover {
+  color: #e55252;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.banner {
+  position: absolute;
+  font-size: 8rem;
+  right: 5%;
+  top: -10%;
+  > i {
+    color:var(--primary-color);
+  }
+  > img {
+    position: absolute;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    translate: -110% 50%;
+  }
+}
+
+
+.navbar.slidedown{
+  animation: slideDown 0.6s ease-in-out forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  background-color: #ffffff;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar {
+  z-index: 1000 !important;
+}
+
+
+/* Responsive styles for Coming Soon Page */
+@media (max-width: 768px) {
+ .head-item{
+  font-size: 10px;
+ }
+ .nav-link{
+  display: block;
+  padding: 10px;
+ }
+}
+
+
+@media (max-width: 480px) {
+  .head-item{
+    display: none;
+  }
+}
