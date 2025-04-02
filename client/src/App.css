@@ -8,3 +8,7 @@
     
     --nav-color: #6B2121;
 }
+
+*{
+    box-sizing: border-box;
+}

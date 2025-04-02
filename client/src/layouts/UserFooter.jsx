@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import Email from "../components/Email";
 
 const UserFooter = () => {
   return (
@@ -161,10 +162,12 @@ const UserFooter = () => {
                     MadhyapurThimi -07, Bhaktapur
                   </span>
                 </p>
-                <p>
+                <p className="d-flex align-items-center gap-1">
                   <i className="fas fa-envelope mr-3"></i>{" "}
                   <span style={{ fontSize: "15px" }}>
-                    himchuli.academy@gmail.com
+                    <div className="mt-3 pointer">
+                      <Email />
+                    </div>
                   </span>
                 </p>
                 <p>

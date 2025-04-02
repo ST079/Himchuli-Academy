@@ -104,6 +104,9 @@ header {
   background-color: #ffffff;
 }
 
+.pointer{
+  cursor: pointer !important;
+}
 @keyframes slideDown {
   from {
     transform: translateY(-100%);

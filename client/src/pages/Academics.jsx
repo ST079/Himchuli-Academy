@@ -12,7 +12,7 @@ const Academics = () => {
   };
 
   return (
-    <div className=" container-fluid academics-page">
+    <div className=" container academics-page bg p-3">
       <div
         id="carouselExampleAutoplaying"
         className="carousel slide"

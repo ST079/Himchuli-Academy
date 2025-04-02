@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ModalLayout from "../components/ModalLayout";
+import Email from "../components/Email";
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -43,8 +44,11 @@ const Navbar = () => {
           <li className="head-item">
             <i className="fa-solid fa-phone-volume"></i>01-6638441
           </li>
-          <li className="head-item">
-            <i className="fa-solid fa-envelope"></i>himchuli.academy@gmail.com
+          <li className="head-item d-flex align-items-center">
+            <i className="fa-solid fa-envelope"></i>
+            <div className="mt-3 pointer">
+              <Email />
+            </div>
           </li>
         </ul>
       </div>
@@ -114,7 +118,9 @@ const Navbar = () => {
                   <li>
                     <Link
                       className={`dropdown-item  ${
-                        pathname.includes("/about/words-from-chairman") ? "active fw-bold" : ""
+                        pathname.includes("/about/words-from-chairman")
+                          ? "active fw-bold"
+                          : ""
                       }`}
                       to="/about/words-from-chairman"
                     >
