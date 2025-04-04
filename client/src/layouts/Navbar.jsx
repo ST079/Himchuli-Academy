@@ -2,15 +2,13 @@ import "./Navbar.css";
 import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { useState,useEffect } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import ModalLayout from "../components/ModalLayout";
+
 
 
 const Navbar = () => {
   const {pathname} = useLocation();
- const [show, setShow] = useState(false);
- const handleClose = () => setShow(false);
- const handleShow = () => setShow(true);
+
 
  useEffect(()=>{
    window.addEventListener("scroll", ()=>{
@@ -25,7 +23,13 @@ if (pathname) {
 }
 },[pathname])
  
-
+const handelModal = () => {
+  <ModalLayout
+    header="Apply Now"
+    title="Grab the Opportunity"
+    body="Click the Link below to apply now"
+  />;
+}
 
   return (
     <div className="p-3 ">
@@ -37,7 +41,7 @@ if (pathname) {
           }}
         >
           <li className="head-item">
-            <i className="fa-solid fa-location-dot"></i>Myadhyapur Thimi - 07
+            <i className="fa-solid fa-location-dot"></i>Madhyapur Thimi - 07
           </li>
           <li className="head-item">
             <i className="fa-solid fa-phone-volume"></i>01-6638441
@@ -142,14 +146,15 @@ if (pathname) {
               <li className="nav-item">
                 <Link
                   className={`nav-link ${
-                    pathname === "/blogs" ? "active fw-bold" : ""
+                    pathname === "/blogs-news" ? "active fw-bold" : ""
                   }`}
                   aria-current="page"
-                  to="/blogs"
+                  to="/blogs-news"
                 >
-                  Blogs
+                  Blogs & News
                 </Link>
               </li>
+              
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -183,15 +188,7 @@ if (pathname) {
                 </ul>
               </li>
               <li className="nav-item">
-                <Button className="nav-btn" onClick={handleShow}>
-                  Apply Now
-                </Button>
-                <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Apply Now</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>Click On the link below to apply now</Modal.Body>
-                </Modal>
+                  <button className="nav-btn" onClick={(e)=>handelModal(e)}>Apply Now</button>
               </li>
             </ul>
             <Link to="/" className="navbar-brand">

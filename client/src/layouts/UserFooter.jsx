@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const UserFooter = () => {
   return (
@@ -50,6 +51,7 @@ const UserFooter = () => {
             <div className="row mt-3">
               {/* Company */}
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <img src={logo} alt="" className="rounded mb-2" height={160} />
                 <h6 className="text-uppercase fw-bold">Himchuli Acadmey</h6>
                 <hr
                   className="mb-4 mt-0 d-inline-block mx-auto"
@@ -59,7 +61,7 @@ const UserFooter = () => {
                     height: "2px",
                   }}
                 />
-                <p>Quality Life, Through Quality Education</p>
+                <p>Quality Life through Quality Education</p>
               </div>
 
               {/* Why */}
@@ -156,7 +158,7 @@ const UserFooter = () => {
                 <p>
                   <i className="fas fa-home mr-3"></i>{" "}
                   <span style={{ fontSize: "15px" }}>
-                    MyadhyapurThimi -07, Bhaktapur
+                    MadhyapurThimi -07, Bhaktapur
                   </span>
                 </p>
                 <p>
@@ -179,7 +181,7 @@ const UserFooter = () => {
           className="text-center p-3"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
-          © 2025 Copyright :
+          © 2025 &nbsp;
           <Link className="text-white text-decoration-none fs-6" to="/">
             Himchuli Academy
           </Link>

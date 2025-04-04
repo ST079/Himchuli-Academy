@@ -1,7 +1,7 @@
 import React from 'react'
 import CommingSoon from '../components/CommingSoon'
 
-const Blogs = () => {
+const BlogNews = () => {
   return (
     <div>
       <CommingSoon></CommingSoon>
@@ -9,4 +9,4 @@ const Blogs = () => {
   )
 }
 
-export default Blogs
+export default BlogNews

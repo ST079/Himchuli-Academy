@@ -11,7 +11,7 @@ const Index = () => {
       <div className="landing-content">
         <h2>Center of Excellence since 2059 BS</h2>
         <h1>
-          Quality Life , <br /> <span className="sm">Through</span> Quality
+          Quality Life through Quality
           Education
         </h1>
         <p>
@@ -21,8 +21,11 @@ const Index = () => {
         </p>
 
         <div className="landing-btns">
+          
           <button className="btn1">Schedule a Visit</button>
+          <Link to={"/about"}>
           <button className="btn2">Learn More</button>
+          </Link>
         </div>
       </div>
 
