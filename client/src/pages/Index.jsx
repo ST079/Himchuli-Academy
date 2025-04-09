@@ -3,6 +3,7 @@ import "./Index.css";
 import YouTubeEmbed from "../components/YoutubeEmbed";
 import { Link } from "react-router-dom";
 import Img from "../../images/why/why.png";
+import Events from "../components/Events"
 
 const Index = () => {
   return (
@@ -10,10 +11,7 @@ const Index = () => {
       <div className="landing-page-img"></div>
       <div className="landing-content">
         <h2>Center of Excellence since 2059 BS</h2>
-        <h1>
-          Quality Life through Quality
-          Education
-        </h1>
+        <h1>Quality Life through Quality Education</h1>
         <p>
           At Himchuli Academy, we nurture curiosity, foster creativity, and
           empower students to reach their full potential in a supportive and
@@ -21,10 +19,11 @@ const Index = () => {
         </p>
 
         <div className="landing-btns">
-          
-          <button className="btn1">Schedule a Visit</button>
+          <Link to={"contact"}>
+            <button className="btn1">Schedule a Visit</button>
+          </Link>
           <Link to={"/about"}>
-          <button className="btn2">Learn More</button>
+            <button className="btn2">Learn More</button>
           </Link>
         </div>
       </div>
@@ -32,6 +31,7 @@ const Index = () => {
       {/* <!-- Second page --> */}
       <div className="body-contents container pb-5">
         <div className="bg pb-5">
+          {/* tour */}
           <div className="second-page p-5 ">
             <div className="socials d-flex flex-column gap-3 fs-4 align-items-center justify-content-center">
               <Link to="https://www.facebook.com/himchuliacademy" target="_">
@@ -53,8 +53,7 @@ const Index = () => {
               >
                 <i
                   className="fa-brands fa-tiktok"
-                  style={{color:"black"}}
-    
+                  style={{ color: "black" }}
                 ></i>
               </Link>
               <Link
@@ -91,6 +90,11 @@ const Index = () => {
             <div className="boards d-flex flex-column fs-4 justify-content-center align-items-center">
               <div className="announcements box line">
                 <h3 className="fs-6 fw-bold">Announcements</h3>
+                <p className="card-text fs-6">
+                  Classes are Closed For Now <br />
+                  Result is On 30th Chaitra ( 7:30 to 9:30 AM ) <br />
+                  New Session Starts on 7st Baisakh <br />
+                </p>
               </div>
               <div className="admission box line">
                 <div className="card-body">
@@ -162,7 +166,7 @@ const Index = () => {
             </div>
 
             {/* Features */}
-            <div className="container px-4 py-5" id="icon-grid">
+            <div className="container px-4 " id="icon-grid">
               <h2 className="pb-2 border-bottom">Key Offerings</h2>
 
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
@@ -181,7 +185,7 @@ const Index = () => {
 
                 <div className="col ">
                   <div className="">
-                    <i class="fa-solid fa-laptop fs-3 "></i>
+                    <i className="fa-solid fa-laptop fs-3 "></i>
                     <h3 className="fw-bold mb-0 fs-5 text-body-emphasis">
                       Technology-Integrated Teaching
                     </h3>
@@ -206,7 +210,7 @@ const Index = () => {
 
                 <div className="col">
                   <div>
-                    <i class="fa-solid fa-utensils fs-3"></i>
+                    <i className="fa-solid fa-utensils fs-3"></i>
                     <h3 className="fw-bold mb-0 fs-5 text-body-emphasis">
                       Healthy & Hygienic Meals
                     </h3>
@@ -218,7 +222,7 @@ const Index = () => {
 
                 <div className="col">
                   <div>
-                    <i class="fa-solid fa-medal fs-3"></i>
+                    <i className="fa-solid fa-medal fs-3"></i>
                     <h3 className="fw-bold mb-0 fs-5 text-body-emphasis">
                       Comprehensive Sports & Arts Programs
                     </h3>
@@ -231,7 +235,7 @@ const Index = () => {
 
                 <div className="col">
                   <div>
-                    <i class="fa-solid fa-flask-vial fs-3"></i>
+                    <i className="fa-solid fa-flask-vial fs-3"></i>
                     <h3 className="fw-bold mb-0 fs-5 text-body-emphasis">
                       Interactive Learning
                     </h3>
@@ -239,6 +243,48 @@ const Index = () => {
                   <p className="fs-6">
                     Math lab, language classes, and ICT-based classrooms
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Blogs & News */}
+          <div className="container">
+            <div className="p-5 mb-4 bg-body-tertiary rounded-3">
+              <div className="container-fluid py-5 ">
+                <h1 className="display-5 fw-bold"> 📚 Blogs & News</h1>
+                <p className="col-md-8 fs-6">
+                  Welcome to our Blog and News section—your go-to source for the
+                  latest updates, stories, and insights from our school
+                  community. From academic achievements and student spotlights
+                  to event recaps and important announcements, stay connected
+                  with everything happening on campus. Whether you're a student,
+                  parent, teacher, or alumni, there's always something inspiring
+                  to read and share.
+                </p>
+                <Link to={"/blogs-news"}>
+                  <button className="btn nav-btn btn-lg" type="button">
+                    Explore !!!
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="row align-items-md-stretch">
+              <Events img="../../images/blogs-news/1.jpg"></Events>
+            
+              <div className="col-md-6">
+                <div className="h-100 p-5 bg-body-tertiary border rounded-3">
+                  <h2>🎓 Graduation Ceremony – Pre-Primary Completion 2081</h2>
+                  <p>
+                    A joyful celebration marking the first big milestone in our
+                    little learners’ journey! With smiles, songs, and proud
+                    moments, our pre-primary graduates took their first step
+                    toward a bright future. Congratulations, Class of 2081!
+                  </p>
+                  <button className="btn btn-outline-secondary" type="button">
+                    Learn More
+                  </button>
                 </div>
               </div>
             </div>

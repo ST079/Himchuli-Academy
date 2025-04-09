@@ -1,35 +1,32 @@
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import ModalLayout from "../components/ModalLayout";
 
-
-
 const Navbar = () => {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("slidedown", window.scrollY > 200);
+    });
+  }, []);
 
- useEffect(()=>{
-   window.addEventListener("scroll", ()=>{
-    const navbar = document.querySelector(".navbar");
-    navbar.classList.toggle("slidedown", window.scrollY >200);
-  });
- },[])
+  useEffect(() => {
+    if (pathname) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
 
-useEffect(() => { 
-if (pathname) {
-  window.scrollTo(0, 0);
-}
-},[pathname])
- 
-const handelModal = () => {
-  <ModalLayout
-    header="Apply Now"
-    title="Grab the Opportunity"
-    body="Click the Link below to apply now"
-  />;
-}
+  const handelModal = () => {
+    <ModalLayout
+      header="Apply Now"
+      title="Grab the Opportunity"
+      body="Click the Link below to apply now"
+    />;
+  };
 
   return (
     <div className="p-3 ">
@@ -77,17 +74,65 @@ const handelModal = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item dropdown">
                 <Link
-                  className={`nav-link ${
+                  className={`nav-link dropdown-toggle  ${
                     pathname.includes("/about") ? "active fw-bold" : ""
                   }`}
-                  aria-current="page"
-                  to="/about"
+                  to="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
                 >
-                  About
+                  About Us
                 </Link>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <Link
+                      className={`dropdown-item ${
+                        pathname.includes("/about") ? "active fw-bold" : ""
+                      }`}
+                      to="/about"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className={`dropdown-item  ${
+                        pathname.includes("/about/vision-mission")
+                          ? "active fw-bold"
+                          : ""
+                      }`}
+                      to="/about/vision-mission"
+                    >
+                      Vision & Mission
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      className={`dropdown-item  ${
+                        pathname.includes("/about/words-from-chairman") ? "active fw-bold" : ""
+                      }`}
+                      to="/about/words-from-chairman"
+                    >
+                      Words from Chairman
+                    </Link>
+                  </li>
+
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="#">
+                      Write About Us
+                    </Link>
+                  </li>
+                </ul>
               </li>
+
               <li className="nav-item">
                 <Link
                   className={`nav-link ${
@@ -154,41 +199,11 @@ const handelModal = () => {
                   Blogs & News
                 </Link>
               </li>
-              
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Why Us?
-                </Link>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Words From our ChairPerson
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Words Form our Principal
-                    </Link>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Write About Us
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                  <button className="nav-btn" onClick={(e)=>handelModal(e)}>Apply Now</button>
+
+              <li className="nav-item mx-2">
+                <button className="nav-btn" onClick={(e) => handelModal(e)}>
+                  Apply Now
+                </button>
               </li>
             </ul>
             <Link to="/" className="navbar-brand">
