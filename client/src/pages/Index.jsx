@@ -3,7 +3,8 @@ import "./Index.css";
 import YouTubeEmbed from "../components/YoutubeEmbed";
 import { Link } from "react-router-dom";
 import Img from "../../images/why/why.png";
-import Events from "../components/Events"
+import Events from "../components/Events";
+import Quotes from "../components/Quotes";
 
 const Index = () => {
   return (
@@ -85,6 +86,11 @@ const Index = () => {
                 in its students, while actively engaging with the community to
                 promote meaningful education in Nepal.
               </p>
+              <Link to={"/about"}>
+                <button className="btn nav-btn btn-sm" type="button">
+                  Learn More
+                </button>
+                </Link>
             </div>
 
             <div className="boards d-flex flex-column fs-4 justify-content-center align-items-center">
@@ -102,7 +108,7 @@ const Index = () => {
                   <p className="card-text fs-6">
                     Welcome to the Himchuli Academy Admissions. We request you
                     to fill out the application forms online. Currently, we are
-                    accepting applications for Grades III, IV, V, VI . Click the
+                    accepting applications upto IX . Click the
                     button below to apply now.
                   </p>
                   <Link to="/apply-now" className="btn nav-btn">
@@ -270,26 +276,27 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="row align-items-md-stretch">
-              <Events img="../../images/blogs-news/1.jpg"></Events>
-            
-              <div className="col-md-6">
-                <div className="h-100 p-5 bg-body-tertiary border rounded-3">
-                  <h2>🎓 Graduation Ceremony – Pre-Primary Completion 2081</h2>
-                  <p>
-                    A joyful celebration marking the first big milestone in our
+            <div className="row g-4">
+              <Events
+                img="../../images/blogs-news/1.jpg"
+                title="A Refreshing Escape to Fulchowki 🌿"
+                description="Escape the city buzz and unwind in the serene hills of Fulchowki. Surrounded by lush forests, cool breezes, and peaceful trails, it's the perfect spot to relax, reconnect with nature, and recharge your mind."
+              ></Events>
+
+              <Events
+                img="../../images/blogs-news/2.jpg"
+                title="🎓 Graduation Ceremony – Pre-Primary Completion 2081"
+                description="A joyful celebration marking the first big milestone in our
                     little learners’ journey! With smiles, songs, and proud
                     moments, our pre-primary graduates took their first step
-                    toward a bright future. Congratulations, Class of 2081!
-                  </p>
-                  <button className="btn btn-outline-secondary" type="button">
-                    Learn More
-                  </button>
-                </div>
-              </div>
+                    toward a bright future. Congratulations, Class of 2081!"
+              ></Events>
             </div>
           </div>
 
+
+          {/* Quotes */}
+          <Quotes/>
           {/* end */}
         </div>
       </div>
