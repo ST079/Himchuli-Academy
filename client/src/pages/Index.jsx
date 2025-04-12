@@ -296,7 +296,11 @@ const Index = () => {
 
 
           {/* Quotes */}
-          <Quotes/>
+          <div className="quotes">
+            <Quotes/>
+          </div>
+
+        
           {/* end */}
         </div>
       </div>

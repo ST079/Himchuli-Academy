@@ -83,7 +83,7 @@ body {
 
 /* bg */
 .bg {
-  background-color: #ffff;
+  background-color: var(--surface-color);
   z-index: 1000;
   min-height: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
