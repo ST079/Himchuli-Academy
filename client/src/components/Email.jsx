@@ -12,7 +12,7 @@ const Email = () => {
     window.open(gmailUrl, "_blank");
   };
 
-  return <p className="" onClick={handleClick}>himchuli.academy@gmail.com</p>;
+  return <span className="" onClick={handleClick}>himchuli.academy@gmail.com</span>;
 };
 
 export default Email;

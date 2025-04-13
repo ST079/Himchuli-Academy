@@ -165,9 +165,9 @@ const UserFooter = () => {
                 <p className="d-flex align-items-center gap-1">
                   <i className="fas fa-envelope mr-3"></i>{" "}
                   <span style={{ fontSize: "15px" }}>
-                    <div className="mt-3 pointer">
+                    <span className="mt-3 pointer">
                       <Email />
-                    </div>
+                    </span>
                   </span>
                 </p>
                 <p>

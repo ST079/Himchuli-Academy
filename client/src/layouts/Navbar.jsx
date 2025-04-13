@@ -46,7 +46,7 @@ const Navbar = () => {
           </li>
           <li className="head-item d-flex align-items-center">
             <i className="fa-solid fa-envelope"></i>
-            <div className="mt-3 pointer">
+            <div className="pointer">
               <Email />
             </div>
           </li>

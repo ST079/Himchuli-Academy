@@ -1,9 +1,8 @@
 import React from 'react'
 
 const Events = ({img, title, description}) => {
-console.log(title);
   return (
-    <div className="col-md-6">
+    <div className="col-md-6 container">
       <div
         className="h-100 p-5 text-bg-dark rounded-3 "
         style={{
@@ -13,7 +12,7 @@ console.log(title);
           objectFit: "cover",
         }}
       >
-        <h2> {title}</h2>
+        <h3> {title}</h3>
         <p className="">{description}</p>
         <button className="btn btn-outline-light" type="button">
           Learn More

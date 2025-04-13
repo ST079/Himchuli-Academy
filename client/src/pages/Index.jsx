@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import Img from "../../images/why/why.png";
 import Events from "../components/Events";
 import Quotes from "../components/Quotes";
+import TypewriterEffect from "../components/TypewriterEffect";
 
 const Index = () => {
   return (
     <div>
       <div className="landing-page-img"></div>
       <div className="landing-content">
-        <h2>Center of Excellence since 2059 BS</h2>
+        <h2><TypewriterEffect/></h2>
         <h1>Quality Life through Quality Education</h1>
         <p>
           At Himchuli Academy, we nurture curiosity, foster creativity, and
