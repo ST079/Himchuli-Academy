@@ -2,11 +2,13 @@ import "./Navbar.css";
 import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ModalLayout from "../components/ModalLayout";
+import ButtonMsg from "../components/ButtonMsg";
 import Email from "../components/Email";
+import ModalLayout from "../components/ModalLayout";
 
 const Navbar = () => {
   const { pathname } = useLocation();
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -22,11 +24,11 @@ const Navbar = () => {
   }, [pathname]);
 
   const handelModal = () => {
-    <ModalLayout
-      header="Apply Now"
-      title="Grab the Opportunity"
-      body="Click the Link below to apply now"
-    />;
+    setShow(true);
+    setTimeout(() => {
+      setShow(false); 
+    }, 5000);
+    console.log("clicked");
   };
 
   return (
@@ -207,8 +209,9 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item mx-2">
-                <button className="nav-btn" onClick={(e) => handelModal(e)}>
+                <button className="nav-btn" onClick={handelModal}>
                   Apply Now
+                {show && <ModalLayout show:show title="Apply Now" body="Click On the link below to go to apply form" setShow:setShow/>}
                 </button>
               </li>
             </ul>

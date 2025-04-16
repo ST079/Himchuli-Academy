@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import "./Contact.css";
 import Email from "../components/Email";
+import emailjs from "@emailjs/browser";
+import ButtonMsg from "../components/ButtonMsg";
+
 
 const Contact = () => {
-  const handleSubmit = (e) => { 
+  const formRef = useRef(null);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    console.log(data);
-  }
+    emailjs
+      .sendForm("service_lnxxwqh", "template_qo4hg6a", formRef.current, {
+        publicKey: "rCS2JuycSmsn2Nh0j",
+      })
+      .then(
+        () => {
+          <ButtonMsg/>
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+   
+  };
 
   return (
     <div className="contact container bg">
@@ -52,7 +67,7 @@ const Contact = () => {
 
       {/* form and map */}
 
-      <div className="form mt-4">
+      <div className="d-flex flex-column flex-md-row justify-content-between gap-4 mt-4">
         <div className="map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.9649737284585!2d85.3797521743396!3d27.687477426369647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a43b7ec4b9f%3A0x52b79cae224b9b05!2sHimchuli%20Academy!5e0!3m2!1sen!2snp!4v1744519011326!5m2!1sen!2snp"
@@ -68,13 +83,22 @@ const Contact = () => {
           <h2>Get In Touch With Us !</h2>
           <hr />
           <div className="form-elements">
-            <Form>
+            <Form
+              id="contact-form"
+              ref={formRef}
+              onSubmit={(e) => handleSubmit(e)}
+            >
               <FloatingLabel
                 controlId="floatingInput"
                 label="Name"
                 className="mb-3 text-dark"
               >
-                <Form.Control type="text" placeholder="" />
+                <Form.Control
+                  type="text"
+                  placeholder=""
+                  name="name"
+                  required
+                />
               </FloatingLabel>
 
               <FloatingLabel
@@ -82,7 +106,7 @@ const Contact = () => {
                 label="Email"
                 className="mb-3 text-dark"
               >
-                <Form.Control type="email" placeholder="" />
+                <Form.Control type="email" placeholder="" name="email" required />
               </FloatingLabel>
 
               <FloatingLabel
@@ -90,7 +114,7 @@ const Contact = () => {
                 label="Subject"
                 className="mb-3 text-dark"
               >
-                <Form.Control type="text" placeholder="" />
+                <Form.Control type="text" placeholder="" name="subject" required />
               </FloatingLabel>
 
               <FloatingLabel
@@ -100,19 +124,20 @@ const Contact = () => {
               >
                 <Form.Control
                   as="textarea"
-                  placeholder="Leave a comment here"
-                  style={{ height: "100px" }}
+                  placeholder=""
+                  name="message"
+                  style={{ height: "100px" }} 
+                  required
                 />
               </FloatingLabel>
-             
-                <button
-                  className="btn btn-outline border"
-                  style={{ width: "100%", backgroundColor: "#fff" }}
-                  onClick={(e) => handleSubmit(e)}
-                >
-                  <i className="fa-solid fa-paper-plane"></i> Send Message
-                </button>
-             
+
+              <button
+                className="btn btn-outline border"
+                style={{ width: "100%", backgroundColor: "#fff" }}
+                type="submit"
+              >
+                <i className="fa-solid fa-paper-plane"></i> Send Message
+              </button>
             </Form>
           </div>
         </div>

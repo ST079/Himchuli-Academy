@@ -31,7 +31,7 @@ const Academics = () => {
                 objectFit: "cover",
               }}
             />
-            <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-none d-md-block">
               <h5>Pre-Primary Education</h5>
               <p>
                 Pre-primary education is the first step in a child's learning

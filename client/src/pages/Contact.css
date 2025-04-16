@@ -8,14 +8,10 @@
   width: 100%;
   border-radius: 5px;
 }
-.form {
-  display: grid;
-  grid-template-columns: 500px 1fr;
-}
 
 .form-group {
   background-color: var(--primary-color);
-  height: 105%;
+  height: 100%;
   width: 100%;
   padding: 20px;
   border-radius: 5px;
@@ -24,8 +20,10 @@
 }
 
 .map {
-  margin-top: 2.5rem;
+  margin-top: 1rem;
 }
+
+
 
 .btn:hover {
   background-color: var(--line-color) !important;

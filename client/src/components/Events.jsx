@@ -2,9 +2,9 @@ import React from 'react'
 
 const Events = ({img, title, description}) => {
   return (
-    <div className="col-md-6 container">
+    <div className="col-md-6 container ">
       <div
-        className="h-100 p-5 text-bg-dark rounded-3 "
+        className="h-100 p-4 text-bg-dark rounded-3 "
         style={{
           backgroundImage: `url(${img})`,
           backgroundSize: "cover",

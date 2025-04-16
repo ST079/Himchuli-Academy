@@ -12,7 +12,9 @@ const Index = () => {
     <div>
       <div className="landing-page-img"></div>
       <div className="landing-content">
-        <h2><TypewriterEffect/></h2>
+        <h2>
+          <TypewriterEffect />
+        </h2>
         <h1>Quality Life through Quality Education</h1>
         <p>
           At Himchuli Academy, we nurture curiosity, foster creativity, and
@@ -91,7 +93,7 @@ const Index = () => {
                 <button className="btn nav-btn btn-sm" type="button">
                   Learn More
                 </button>
-                </Link>
+              </Link>
             </div>
 
             <div className="boards d-flex flex-column fs-4 justify-content-center align-items-center">
@@ -109,8 +111,8 @@ const Index = () => {
                   <p className="card-text fs-6">
                     Welcome to the Himchuli Academy Admissions. We request you
                     to fill out the application forms online. Currently, we are
-                    accepting applications upto IX . Click the
-                    button below to apply now.
+                    accepting applications upto IX . Click the button below to
+                    apply now.
                   </p>
                   <Link to="/apply-now" className="btn nav-btn">
                     Get Forms
@@ -277,7 +279,11 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="row g-4">
+            <div className="row container">
+              <div className="text-dark mb-4 d-flex justify-content-between align-items-center">
+                <h2 className="display-5 fw-bold">Latest Updates</h2>
+                <Link to={"./blogs-news"}>View All</Link>
+              </div>
               <Events
                 img="../../images/blogs-news/1.jpg"
                 title="A Refreshing Escape to Fulchowki 🌿"
@@ -295,13 +301,11 @@ const Index = () => {
             </div>
           </div>
 
-
           {/* Quotes */}
-          <div className="quotes">
-            <Quotes/>
+          <div className="quotes mt-5">
+            <Quotes />
           </div>
 
-        
           {/* end */}
         </div>
       </div>

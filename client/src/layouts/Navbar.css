@@ -137,6 +137,6 @@ header {
 
 @media (max-width: 480px) {
   .head-item{
-    display: none;
+    display: none !important;
   }
 }
