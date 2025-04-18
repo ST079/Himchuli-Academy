@@ -4,10 +4,13 @@ import YouTubeEmbed from "../components/YoutubeEmbed";
 import { Link } from "react-router-dom";
 import Img from "../../images/why/why.png";
 import Events from "../components/Events";
-import Quotes from "../components/Quotes";
 import TypewriterEffect from "../components/TypewriterEffect";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
 
 const Index = () => {
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <div>
       <div className="landing-page-img"></div>
@@ -260,7 +263,7 @@ const Index = () => {
           {/* Blogs & News */}
           <div className="container">
             <div className="p-5 mb-4 bg-body-tertiary rounded-3">
-              <div className="container-fluid py-5 ">
+              <div className="container-fluid py-5 blogs-news">
                 <h1 className="display-5 fw-bold"> 📚 Blogs & News</h1>
                 <p className="col-md-8 fs-6">
                   Welcome to our Blog and News section—your go-to source for the
@@ -272,24 +275,24 @@ const Index = () => {
                   to read and share.
                 </p>
                 <Link to={"/blogs-news"}>
-                  <button className="btn nav-btn btn-lg" type="button">
+                  <button className="btn nav-btn btn-lg blog-btn" type="button">
                     Explore !!!
                   </button>
                 </Link>
               </div>
             </div>
 
-            <div className="row container">
-              <div className="text-dark mb-4 d-flex justify-content-between align-items-center">
+            <div className="row container gap-4">
+              <div className="latest-updates text-dark mb-4 d-flex justify-content-between align-items-center">
                 <h2 className="display-5 fw-bold">Latest Updates</h2>
-                <Link to={"./blogs-news"}>View All</Link>
+                <Link to={"./blogs-news"}> <p className="fs-6">View All</p> </Link>
               </div>
               <Events
                 img="../../images/blogs-news/1.jpg"
                 title="A Refreshing Escape to Fulchowki 🌿"
                 description="Escape the city buzz and unwind in the serene hills of Fulchowki. Surrounded by lush forests, cool breezes, and peaceful trails, it's the perfect spot to relax, reconnect with nature, and recharge your mind."
               ></Events>
-
+                
               <Events
                 img="../../images/blogs-news/2.jpg"
                 title="🎓 Graduation Ceremony – Pre-Primary Completion 2081"
@@ -301,11 +304,32 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Quotes */}
-          <div className="quotes mt-5">
-            <Quotes />
-          </div>
+          {/* Banner */}
+          <div className="last">
+            <div className="container">
+              <div className="row justify-content-md-center p-5">
+                <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                  <h2 className="mb-4 display-5 text-center fw-bold">
+                    Join the Himchuli Academy Family Today!
+                  </h2>
+                  <p className="text-secondary text-center lead fs-5">
+                    Enroll now and embark on a journey of discovery, growth, and
+                    success. Together, let's shape a brighter future for your
+                    child.
+                  </p>
+                  <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark" />
+                </div>
+                <Button variant="primary" onClick={() => setModalShow(true)}>
+                 Book Your Seat Now!!
+                </Button>
 
+                <ApplyModal
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+                />
+              </div>
+            </div>
+          </div>
           {/* end */}
         </div>
       </div>
@@ -313,4 +337,29 @@ const Index = () => {
   );
 };
 
+const ApplyModal = (props) => {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Apply Now
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Himchuli Academy</h4>
+        <p>
+          Click on the link below to apply for admission at Himchuli Academy. 
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+};
 export default Index;

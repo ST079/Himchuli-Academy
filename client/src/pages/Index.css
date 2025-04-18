@@ -258,6 +258,32 @@ body {
       font-size: 1.5rem !important;
     }
   }
+
+  .blogs-news{
+    >h1{
+      font-size: 1.5rem !important;
+    }
+
+    >p{
+      font-size: 0.8rem !important;
+    }
+    .blog-btn{
+      font-size: 0.8rem !important;
+    }
+  }
+
+  .latest-updates{
+    >h2{
+      font-size: 1.5rem !important;
+    }
+
+    >p{
+      font-size: 0.8rem !important;
+    }
+    .update-btn{
+      font-size: 0.8rem !important;
+    }
+  }
 }
 
 @media (max-width: 480px) {

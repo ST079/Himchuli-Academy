@@ -2,14 +2,12 @@ import "./Navbar.css";
 import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ButtonMsg from "../components/ButtonMsg";
 import Email from "../components/Email";
-import ModalLayout from "../components/ModalLayout";
+
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  const [show, setShow] = useState(false);
-
+  
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const navbar = document.querySelector(".navbar");
@@ -23,14 +21,7 @@ const Navbar = () => {
     }
   }, [pathname]);
 
-  const handelModal = () => {
-    setShow(true);
-    setTimeout(() => {
-      setShow(false); 
-    }, 5000);
-    console.log("clicked");
-  };
-
+ 
   return (
     <div className="p-3 ">
       <div className="container-fluid">
@@ -209,10 +200,7 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item mx-2">
-                <button className="nav-btn" onClick={handelModal}>
-                  Apply Now
-                {show && <ModalLayout show:show title="Apply Now" body="Click On the link below to go to apply form" setShow:setShow/>}
-                </button>
+                
               </li>
             </ul>
             <Link to="/" className="navbar-brand">
