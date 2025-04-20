@@ -68,7 +68,7 @@ const Contact = () => {
       {/* form and map */}
 
       <div className="d-flex flex-column flex-md-row justify-content-between gap-4 mt-4">
-        <div className="map">
+        <div className="map embed-responsive embed-responsive-16by9">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.9649737284585!2d85.3797521743396!3d27.687477426369647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a43b7ec4b9f%3A0x52b79cae224b9b05!2sHimchuli%20Academy!5e0!3m2!1sen!2snp!4v1744519011326!5m2!1sen!2snp"
             width="600"
@@ -93,12 +93,7 @@ const Contact = () => {
                 label="Name"
                 className="mb-3 text-dark"
               >
-                <Form.Control
-                  type="text"
-                  placeholder=""
-                  name="name"
-                  required
-                />
+                <Form.Control type="text" placeholder="" name="name" required />
               </FloatingLabel>
 
               <FloatingLabel
@@ -106,7 +101,12 @@ const Contact = () => {
                 label="Email"
                 className="mb-3 text-dark"
               >
-                <Form.Control type="email" placeholder="" name="email" required />
+                <Form.Control
+                  type="email"
+                  placeholder=""
+                  name="email"
+                  required
+                />
               </FloatingLabel>
 
               <FloatingLabel
@@ -114,7 +114,12 @@ const Contact = () => {
                 label="Subject"
                 className="mb-3 text-dark"
               >
-                <Form.Control type="text" placeholder="" name="subject" required />
+                <Form.Control
+                  type="text"
+                  placeholder=""
+                  name="subject"
+                  required
+                />
               </FloatingLabel>
 
               <FloatingLabel
@@ -126,7 +131,7 @@ const Contact = () => {
                   as="textarea"
                   placeholder=""
                   name="message"
-                  style={{ height: "100px" }} 
+                  style={{ height: "100px" }}
                   required
                 />
               </FloatingLabel>

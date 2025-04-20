@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import logo from "../assets/logo.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation ,navigate} from "react-router-dom";
 import { useState, useEffect } from "react";
 import Email from "../components/Email";
 
@@ -21,7 +21,9 @@ const Navbar = () => {
     }
   }, [pathname]);
 
- 
+ const apply=()=>{
+    
+ }
   return (
     <div className="p-3 ">
       <div className="container-fluid">
@@ -200,7 +202,7 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item mx-2">
-                
+                <button className="btn nav-btn" onClick={apply()}>Apply Now</button>
               </li>
             </ul>
             <Link to="/" className="navbar-brand">

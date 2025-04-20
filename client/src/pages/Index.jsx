@@ -282,7 +282,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="row container gap-4">
+            <div className="row container">
               <div className="latest-updates text-dark mb-4 d-flex justify-content-between align-items-center">
                 <h2 className="display-5 fw-bold">Latest Updates</h2>
                 <Link to={"./blogs-news"}> <p className="fs-6">View All</p> </Link>
@@ -346,14 +346,21 @@ const ApplyModal = (props) => {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Apply Now
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Apply Now</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <h4>Himchuli Academy</h4>
         <p>
-          Click on the link below to apply for admission at Himchuli Academy. 
+          Click on the link below to apply for admission at Himchuli Academy.
+          <br />
+          <Link
+            to={
+              "https://ingrails.com/school/admission/form/himchuli-academy?fbclid=IwY2xjawJwEa5leHRuA2FlbQIxMAABHiz0aJHg1MfzmjyUvOHwh3tHMui5P1nNqiFB3bMPEvecf0EUFzWqBMrhACLK_aem_YKxBYbckSYBhuODSyprtHw"
+            }
+          >
+            Apply Here
+          </Link>
+          
         </p>
       </Modal.Body>
       <Modal.Footer>
