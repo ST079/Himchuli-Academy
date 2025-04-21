@@ -19,7 +19,6 @@ const Services = () => {
               and learn at their own pace. It fosters independence, critical
               thinking, and a love for learning.
             </p>
-           
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
@@ -33,7 +32,6 @@ const Services = () => {
               classrooms and ICT-based learning. This approach enhances
               engagement, interactivity, and understanding of complex concepts.
             </p>
-          
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
@@ -42,12 +40,12 @@ const Services = () => {
             <h3 className="fs-2 text-body-emphasis">
               Healthy & Hygienic Meals
             </h3>
-            <p>Academy canteen offers nutritious food at subsidized rates. 
-              The meals are prepared with utmost care, ensuring hygiene and
-              quality. This initiative promotes healthy eating habits among
-              students and supports their overall well-being.
+            <p>
+              Academy canteen offers nutritious food at subsidized rates. The
+              meals are prepared with utmost care, ensuring hygiene and quality.
+              This initiative promotes healthy eating habits among students and
+              supports their overall well-being.
             </p>
-          
           </div>
         </div>
       </div>
@@ -55,60 +53,42 @@ const Services = () => {
       <div className="b-example-divider"></div>
 
       <div className="container px-4 py-5" id="hanging-icons">
-        <h2 className="pb-2 border-bottom">Hanging icons</h2>
+        <h2 className="pb-2 border-bottom">What We Offer !</h2>
         <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div className="col d-flex align-items-start">
             <div className="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg className="bi" width="1em" height="1em" aria-hidden="true">
-                <use xlinkHref="#toggles2"></use>
-              </svg>
+              <i className="fa-solid fa-robot"></i>
             </div>
             <div>
-              <h3 className="fs-2 text-body-emphasis">Featured title</h3>
+              <h3 className="fs-2 text-body-emphasis">STEAM Education</h3>
               <p>
-                Paragraph of text beneath the heading to explain the heading.
-                We'll add onto it with another sentence and probably just keep
-                going until we run out of words.
+                An interdisciplinary approach integrating Science, Technology,
+                Engineering, Arts, and Mathematics.
               </p>
-              <a href="#" className="btn btn-primary">
-                Primary button
-              </a>
             </div>
           </div>
           <div className="col d-flex align-items-start">
             <div className="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg className="bi" width="1em" height="1em" aria-hidden="true">
-                <use xlinkHref="#cpu-fill"></use>
-              </svg>
+              <i className="fa-solid fa-tv"></i>
             </div>
             <div>
-              <h3 className="fs-2 text-body-emphasis">Featured title</h3>
+              <h3 className="fs-2 text-body-emphasis">Digital Classrooms</h3>
               <p>
-                Paragraph of text beneath the heading to explain the heading.
-                We'll add onto it with another sentence and probably just keep
-                going until we run out of words.
+                Tech-enabled learning environments that make lessons interactive
+                and engaging.
               </p>
-              <a href="#" className="btn btn-primary">
-                Primary button
-              </a>
             </div>
           </div>
           <div className="col d-flex align-items-start">
             <div className="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg className="bi" width="1em" height="1em" aria-hidden="true">
-                <use xlinkHref="#tools"></use>
-              </svg>
+              <i className="fa-solid fa-rocket"></i>
             </div>
             <div>
-              <h3 className="fs-2 text-body-emphasis">Featured title</h3>
+              <h3 className="fs-2 text-body-emphasis">Playway Method</h3>
               <p>
-                Paragraph of text beneath the heading to explain the heading.
-                We'll add onto it with another sentence and probably just keep
-                going until we run out of words.
+                Fun and activity-based learning for young minds to explore
+                naturally
               </p>
-              <a href="#" className="btn btn-primary">
-                Primary button
-              </a>
             </div>
           </div>
         </div>
@@ -116,49 +96,32 @@ const Services = () => {
 
       <div className="b-example-divider"></div>
 
-      <div className="container px-4 py-5" id="custom-cards">
-        <h2 className="pb-2 border-bottom">Custom cards</h2>
+      <div className="container px-4 py-5 d-none" id="custom-cards">
+        <h2 className="pb-2 border-bottom">Insights</h2>
 
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
           <div className="col">
             <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
-              <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style={{ backgroundImage:"url(../../images/services/g1.png)", objectFit:"cover" , backgroundSize:"cover"}}>
                 <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                  Short title, long jacket
+                  Graduation Ceremony
                 </h3>
                 <ul className="d-flex list-unstyled mt-auto">
                   <li className="me-auto">
                     <img
-                      src="https://github.com/twbs.png"
-                      alt="Bootstrap"
+                      src="../../public/logo.png"
+                      alt="Himchuli Academy"
                       width="32"
                       height="32"
                       className="rounded-circle border border-white"
                     />
                   </li>
                   <li className="d-flex align-items-center me-3">
-                    <svg
-                      className="bi me-2"
-                      width="1em"
-                      height="1em"
-                      role="img"
-                      aria-label="Location"
-                    >
-                      <use xlinkHref="#geo-fill"></use>
-                    </svg>
-                    <small>Earth</small>
+                    
+                    <small>Primary</small>
                   </li>
                   <li className="d-flex align-items-center">
-                    <svg
-                      className="bi me-2"
-                      width="1em"
-                      height="1em"
-                      role="img"
-                      aria-label="Duration"
-                    >
-                      <use xlinkHref="#calendar3"></use>
-                    </svg>
-                    <small>3d</small>
+                    <small></small>
                   </li>
                 </ul>
               </div>
@@ -174,8 +137,8 @@ const Services = () => {
                 <ul className="d-flex list-unstyled mt-auto">
                   <li className="me-auto">
                     <img
-                      src="https://github.com/twbs.png"
-                      alt="Bootstrap"
+                      src="../../public/logo.png"
+                      alt="Himchuli Academy"
                       width="32"
                       height="32"
                       className="rounded-circle border border-white"
@@ -219,8 +182,8 @@ const Services = () => {
                 <ul className="d-flex list-unstyled mt-auto">
                   <li className="me-auto">
                     <img
-                      src="https://github.com/twbs.png"
-                      alt="Bootstrap"
+                      src="../../public/logo.png"
+                      alt="Himchuli Academy"
                       width="32"
                       height="32"
                       className="rounded-circle border border-white"
@@ -259,7 +222,7 @@ const Services = () => {
 
       <div className="b-example-divider"></div>
 
-      <div className="container px-4 py-5" id="icon-grid">
+      <div className="container px-4 py-5 d-none" id="icon-grid">
         <h2 className="pb-2 border-bottom">Icon grid</h2>
 
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
@@ -412,7 +375,7 @@ const Services = () => {
 
       <div className="b-example-divider"></div>
 
-      <div className="container px-4 py-5">
+      <div className="container px-4 py-5 d-none">
         <h2 className="pb-2 border-bottom">Features with title</h2>
 
         <div className="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">

@@ -117,7 +117,13 @@ const Index = () => {
                     accepting applications upto IX . Click the button below to
                     apply now.
                   </p>
-                  <Link to="/apply-now" className="btn nav-btn">
+                  <Link
+                    to={
+                      "https://ingrails.com/school/admission/form/himchuli-academy?fbclid=IwY2xjawJwEa5leHRuA2FlbQIxMAABHiz0aJHg1MfzmjyUvOHwh3tHMui5P1nNqiFB3bMPEvecf0EUFzWqBMrhACLK_aem_YKxBYbckSYBhuODSyprtHw"
+                    }
+                    target="_blank"
+                    className="btn nav-btn"
+                  >
                     Get Forms
                   </Link>
                 </div>
@@ -285,14 +291,17 @@ const Index = () => {
             <div className="row container">
               <div className="latest-updates text-dark mb-4 d-flex justify-content-between align-items-center">
                 <h2 className="display-5 fw-bold">Latest Updates</h2>
-                <Link to={"./blogs-news"}> <p className="fs-6">View All</p> </Link>
+                <Link to={"./blogs-news"}>
+                  {" "}
+                  <p className="fs-6">View All</p>{" "}
+                </Link>
               </div>
               <Events
                 img="../../images/blogs-news/1.jpg"
                 title="A Refreshing Escape to Fulchowki 🌿"
                 description="Escape the city buzz and unwind in the serene hills of Fulchowki. Surrounded by lush forests, cool breezes, and peaceful trails, it's the perfect spot to relax, reconnect with nature, and recharge your mind."
               ></Events>
-                
+
               <Events
                 img="../../images/blogs-news/2.jpg"
                 title="🎓 Graduation Ceremony – Pre-Primary Completion 2081"
@@ -320,7 +329,7 @@ const Index = () => {
                   <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark" />
                 </div>
                 <Button variant="primary" onClick={() => setModalShow(true)}>
-                 Book Your Seat Now!!
+                  Book Your Seat Now!!
                 </Button>
 
                 <ApplyModal

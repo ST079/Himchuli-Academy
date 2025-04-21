@@ -6,26 +6,25 @@ import Email from "../components/Email";
 import emailjs from "@emailjs/browser";
 import ButtonMsg from "../components/ButtonMsg";
 
-
 const Contact = () => {
   const formRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("service_lnxxwqh", "template_qo4hg6a", formRef.current, {
-        publicKey: "rCS2JuycSmsn2Nh0j",
+      .sendForm("", "", formRef.current, {
+        publicKey: "",
       })
       .then(
         () => {
-          <ButtonMsg/>
-          console.log("SUCCESS!");
+          <ButtonMsg />;
+          alert("Message Sent Successfully");
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          
+  alert("Service Under Work. Sorry For The Inconvenience");
         }
       );
-   
   };
 
   return (
