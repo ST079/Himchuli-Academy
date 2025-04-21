@@ -13,7 +13,7 @@ const Events = ({img, title, description}) => {
         }}
       >
         <h3> {title}</h3>
-        <p className="">{description}</p>
+        <p className="d-none d-md-block">{description}</p>
         <button className="btn btn-outline-light" type="button">
           Learn More
         </button>

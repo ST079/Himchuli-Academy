@@ -357,6 +357,7 @@ const ApplyModal = (props) => {
             to={
               "https://ingrails.com/school/admission/form/himchuli-academy?fbclid=IwY2xjawJwEa5leHRuA2FlbQIxMAABHiz0aJHg1MfzmjyUvOHwh3tHMui5P1nNqiFB3bMPEvecf0EUFzWqBMrhACLK_aem_YKxBYbckSYBhuODSyprtHw"
             }
+            target="_blank"
           >
             Apply Here
           </Link>
