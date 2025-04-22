@@ -70,66 +70,18 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item dropdown">
+              <li className="nav-item">
                 <Link
-                  className={`nav-link dropdown-toggle  ${
-                    pathname.includes("/about") ? "active fw-bold" : ""
+                  className={`nav-link ${
+                    pathname === "/about" ? "active fw-bold" : ""
                   }`}
-                  to="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  aria-current="page"
+                  to="/about"
                 >
                   About Us
                 </Link>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <Link
-                      className={`dropdown-item ${
-                        pathname.includes("/about") ? "active fw-bold" : ""
-                      }`}
-                      to="/about"
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className={`dropdown-item  ${
-                        pathname.includes("/about/vision-mission")
-                          ? "active fw-bold"
-                          : ""
-                      }`}
-                      to="/about/vision-mission"
-                    >
-                      Vision & Mission
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className={`dropdown-item  ${
-                        pathname.includes("/about/words-from-chairman")
-                          ? "active fw-bold"
-                          : ""
-                      }`}
-                      to="/about/words-from-chairman"
-                    >
-                      Words from Chairman
-                    </Link>
-                  </li>
-
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Write About Us
-                    </Link>
-                  </li>
-                </ul>
               </li>
+             
 
               <li className="nav-item">
                 <Link

@@ -297,13 +297,13 @@ const Index = () => {
                 </Link>
               </div>
               <Events
-                img="../../images/blogs-news/1.jpg"
+                img="../../images/blogs-news/1.png"
                 title="A Refreshing Escape to Fulchowki 🌿"
                 description="Escape the city buzz and unwind in the serene hills of Fulchowki. Surrounded by lush forests, cool breezes, and peaceful trails, it's the perfect spot to relax, reconnect with nature, and recharge your mind."
               ></Events>
 
               <Events
-                img="../../images/blogs-news/2.jpg"
+                img="../../images/blogs-news/2.png"
                 title="🎓 Graduation Ceremony – Pre-Primary Completion 2081"
                 description="A joyful celebration marking the first big milestone in our
                     little learners’ journey! With smiles, songs, and proud
