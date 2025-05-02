@@ -3,6 +3,9 @@ import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 import building from "../assets/building.jpg";
 import vision from "../../images/about/vision.png";
 import { Link } from "react-router-dom";
+import principal from "../../images/about/principal.jpg";
+import chairperson from "../../images/about/chairperson.jpg";
+import vicePrincipal from "../../images/about/vice.jpg";
 
 const About = () => {
   return (
@@ -170,28 +173,38 @@ const About = () => {
       <div className="bg-primary text-white py-5 mb-5">
         <Container>
           <h2 className="text-center mb-5">Words from Our Leaders</h2>
-          <Carousel indicators={false} className="testimonial-carousel">
+          <Carousel indicators={false} className="testimonial-carousel ">
             <Carousel.Item>
               <Row className="justify-content-center">
                 <Col md={8} lg={6} className="text-center">
                   <img
-                    src="/placeholder.svg?height=150&width=150"
+                    src={chairperson}
                     alt="Principal"
                     className="rounded-circle mb-3"
                     width="150"
                     height="150"
+                    style={{ objectFit: "cover", objectPosition: "top" }}
                   />
-                  <h4>Dr. Rajesh Sharma</h4>
+                  <h4>Mr. Ishwar Thapa Magar</h4>
                   <p className="text-white-50 mb-4">Chairperson</p>
                   <blockquote className="blockquote">
                     <p>
-                      "At Himchuli Academy, we believe that every child has
-                      unlimited potential. Our mission is to provide an
-                      environment where this potential can flourish. We are
-                      committed to excellence in education, comfaning
-                      traditional values with modern teaching methods to prepare
-                      our students for the future."
+                      It is with great pride and heartfelt gratitude that I
+                      address you today as a chairperson of Himchuli Academy.
+                      Our school stands as a symbol of vision, dedication, and
+                      relentless pursuit of excellence. From the very beginning,
+                      our mission has been to create an environment where young
+                      minds can flourish - where education goes beyond books and
+                      shapes character, leadership, and humanity. I am deeply
+                      thankful to our principal, vice-principal, coordinators,
+                      teachers, staff, students and parents for believing in
+                      this vision and working together to bring it to life. Let
+                      us continue to move forward with the same passion and
+                      commitment, making our school not just a center of
+                      academic excellence, but a family where every dream finds
+                      its wings.
                     </p>
+                    <button className="btn nav-btn">Learn More !</button>
                   </blockquote>
                 </Col>
               </Row>
@@ -200,22 +213,26 @@ const About = () => {
               <Row className="justify-content-center">
                 <Col md={8} lg={6} className="text-center">
                   <img
-                    src="/placeholder.svg?height=150&width=150"
-                    alt="Chairperson"
+                    src={principal}
+                    alt="Principal: Ganesh Ram Kalu"
                     className="rounded-circle mb-3"
                     width="150"
                     height="150"
+                    style={{ objectFit: "cover", objectPosition: "top" }}
                   />
                   <h4>Mr. Ganesh Ram Kalu</h4>
                   <p className="text-white-50 mb-4">Principal</p>
                   <blockquote className="blockquote">
                     <p>
-                      "Education is the most powerful tool we can use to change
-                      the world. At Himchuli Academy, we are dedicated to
-                      providing quality education that not only focuses on
-                      academic excellence but also on developing character,
-                      creativity, and compassion in our students."
+                      "It is with great pride and joy that I address you as the
+                      principal of Himchuli Academy. Every day, I am inspired by
+                      the dedication of our teachers, the enthusiasm of our
+                      students, and the unwavering support of our parents and
+                      guardians. Together, we create a nurturing environment
+                      where learning thrives, character is built, and dreams
+                      take flight."
                     </p>
+                    <button className="btn nav-btn">Learn More !</button>
                   </blockquote>
                 </Col>
               </Row>
@@ -224,11 +241,12 @@ const About = () => {
               <Row className="justify-content-center">
                 <Col md={8} lg={6} className="text-center">
                   <img
-                    src="/placeholder.svg?height=150&width=150"
+                    src={vicePrincipal}
                     alt="Academic Director"
                     className="rounded-circle mb-3"
                     width="150"
                     height="150"
+                    style={{ objectFit: "cover", objectPosition: "top" }}
                   />
                   <h4>Mr. Nirmal Pokharel</h4>
                   <p className="text-white-50 mb-4">Vice - Principal</p>
