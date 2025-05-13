@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import logo from "../assets/logo.png";
-import { Link, useLocation ,navigate} from "react-router-dom";
+import { Link, useLocation} from "react-router-dom";
 import { useState, useEffect } from "react";
 import Email from "../components/Email";
 
@@ -12,6 +12,7 @@ const Navbar = () => {
     window.addEventListener("scroll", () => {
       const navbar = document.querySelector(".navbar");
       navbar.classList.toggle("slidedown", window.scrollY > 200);
+      navbar.classList.toggle("hide", window.scrollY > 1200);
     });
   }, []);
 

@@ -104,6 +104,12 @@ header {
   background-color: #ffffff;
 }
 
+
+.navbar.hide {
+  animation: slideUp 0.6s ease-in-out forwards;
+  pointer-events: none; /* Prevent interaction while hidden */
+}
+
 .pointer{
   cursor: pointer !important;
 }
@@ -115,6 +121,17 @@ header {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }
 
