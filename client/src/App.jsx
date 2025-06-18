@@ -9,7 +9,7 @@ import Admission from "./pages/Admission";
 import Services from "./pages/Services";
 import BeyondAcademics from "./pages/BeyondAcademics";
 import Contact from "./pages/Contact";
-import BlogNews from "./pages/BlogNews";
+import NewsPage from "./pages/NewsPage";
 import NotFound from "./pages/NotFound";
 import "./App.css"
 
@@ -36,7 +36,7 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/beyond-academics" element={<BeyondAcademics />} />
-            <Route path="/blogs-news" element={<BlogNews />} />
+            <Route path="/news" element={<NewsPage />} />
           </Route>
 
 

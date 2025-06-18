@@ -193,12 +193,12 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link
                   className={`nav-link ${
-                    pathname === "/blogs-news" ? "active fw-bold" : ""
+                    pathname === "/news" ? "active fw-bold" : ""
                   }`}
                   aria-current="page"
-                  to="/blogs-news"
+                  to="/news"
                 >
-                  Blogs & News
+                  News
                 </Link>
               </li>
 
