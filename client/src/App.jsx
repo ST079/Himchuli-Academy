@@ -3,7 +3,7 @@ import Loader from "./components/Loader";
 import Index from "./pages/Index";
 import UserLayout from "./layouts/UserLayout";
 import { useState,useEffect } from "react";
-import About from "./pages/About";
+import AboutUs from "./pages/AboutUs";
 import Acacemics from "./pages/Academics";
 import Admission from "./pages/Admission";
 import Services from "./pages/Services";
@@ -30,7 +30,7 @@ const App = () => {
           {/* User Routes */}
           <Route path="/" element={<UserLayout />}>
             <Route index element={<Index />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<AboutUs />} />
             <Route path="/academics" element={<Acacemics />} />
             <Route path="/admission" element={<Admission />} />
             <Route path="/services" element={<Services />} />
