@@ -22,9 +22,7 @@ const Navbar = () => {
     }
   }, [pathname]);
 
- const apply=()=>{
-    
- }
+ 
   return (
     <div className="p-3 ">
       <div className="container-fluid">
@@ -155,9 +153,14 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item mx-2">
-                <button className="btn nav-btn" onClick={apply()}>
-                  Apply Now
-                </button>
+                <Link
+                  to={
+                    "https://ingrails.com/school/admission/form/himchuli-academy?fbclid=IwY2xjawJwEa5leHRuA2FlbQIxMAABHiz0aJHg1MfzmjyUvOHwh3tHMui5P1nNqiFB3bMPEvecf0EUFzWqBMrhACLK_aem_YKxBYbckSYBhuODSyprtHw"
+                  }
+                  target="_blank"
+                >
+                  <button className="btn nav-btn">Apply Now</button>
+                </Link>
               </li>
             </ul>
             <Link to="/" className="navbar-brand">

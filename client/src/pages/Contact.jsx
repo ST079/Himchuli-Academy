@@ -5,6 +5,8 @@ import "./Contact.css";
 import Email from "../components/Email";
 import emailjs from "@emailjs/browser";
 import ButtonMsg from "../components/ButtonMsg";
+import { Container } from "react-bootstrap";
+
 
 
 const Contact = () => {
@@ -29,20 +31,20 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact container bg">
-      <div className="row justify-content-md-center p-5">
-        <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-          <h2 className="mb-4 display-5 text-center fw-bold">Need Help ?</h2>
-          <p className="text-secondary text-center lead fs-5">
+    <div className="contact container bg pt-3">
+      {/* Hero Section */}
+      <div className="hero-section text-center py-5 mb-4">
+        <Container>
+          <h1 className="display-4 fw-bolder text-white">Need Help ?</h1>
+          <p className="lead text-white">
             Our team is available to provide prompt and helpful responses to all
             inquiries. You can reach us via phone, email, or by filling out the
             contact form below.
           </p>
-          <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark" />
-        </div>
+        </Container>
       </div>
       {/* items */}
-      <div className="contact-items d-flex flex-column flex-md-row justify-content-evenly align-items-center gap-5">
+      <div className="contact-items d-flex flex-column flex-md-row justify-content-evenly align-items-center gap-5 mt-5">
         <div className="location shadow">
           <div className="contact-icon text-center">
             <i className="fa-solid fa-location-dot fs-1"></i>

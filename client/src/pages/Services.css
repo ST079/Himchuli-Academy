@@ -1,0 +1,56 @@
+.services-page {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .service-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-icon-container {
+    background-color: #2c3e50;
+    color: white;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .card-text {
+    color: #555;
+  }
+  
+  .display-4 {
+    color: #2c3e50;
+    font-weight: 700;
+  }
+  
+  .lead {
+    color: #666;
+    font-size: 1.25rem;
+  }

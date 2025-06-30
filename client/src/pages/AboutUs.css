@@ -1,159 +1,311 @@
-/* Custom styles for About Us page */
+/* General Styles */
 .about-us-page {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .about-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('https://via.placeholder.com/1920x600?text=Himchuli+Academy') center/cover no-repeat;
-    color: white;
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 15px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+}
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+  background-size: cover;
+  color: white;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 15px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:var(--footer-color);
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.about-hero h1 {
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+}
+
+/* Mission and Vision Cards */
+.mission-card, .vision-card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover, .vision-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  background: #e3f2fd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.icon-box i {
+  font-size: 30px;
+}
+
+.mission-card .icon-box {
+  background: #e8f5e9;
+}
+
+.vision-card .icon-box {
+  background: #e3f2fd;
+}
+
+/* Leadership Messages */
+.leadership-messages .card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.leadership-messages .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leader-image {
+  width: 120px;
+  height: 120px;
+  border: 5px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.leader-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leader-signature {
+  font-style: italic;
+  color: #3498db;
+}
+
+/* History Section */
+.history-image-container {
+  position: relative;
+}
+
+.history-badge {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  background: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Section */
+.stats-section {
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Team Section */
+.team-card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.team-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-image-container img {
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image-container img {
+  transform: scale(1.05);
+}
+
+.team-social {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(52, 152, 219, 0.8);
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .team-social {
+  bottom: 0;
+}
+
+.team-social a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.team-social a:hover {
+  color: #f1c40f;
+}
+
+/* Testimonials */
+.testimonial-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin: 0 15px;
+}
+
+.testimonial-content {
+  font-style: italic;
+  color: #555;
+}
+
+.author-image img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background: #3498db;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
+.carousel-control-prev {
+  left: -20px;
+}
+
+.carousel-control-next {
+  right: -20px;
+}
+
+/* Achievements Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.achievement-item {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.achievement-item i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .section-title {
-    color: #2c3e50;
-    position: relative;
-    padding-bottom: 10px;
-    text-align: center;
-  }
-  
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background-color: #3498db;
-  }
-  
-  .mission-card, .vision-card {
-    border: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-  }
-  
-  .mission-card:hover, .vision-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .icon-box {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto;
-    background-color: #3498db;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-  }
-  
-  .mission-card .icon-box {
-    background-color: #3498db;
-  }
-  
-  .vision-card .icon-box {
-    background-color: #2ecc71;
-  }
-  
-  .history-section {
-    background-color: #f8f9fa;
-  }
-  
-  .value-icon {
-    color: #3498db;
-    font-size: 1.5rem;
-  }
-  
-  .stats-section {
-    background-color: #2c3e50;
-    color: white;
-  }
-  
-  .stat-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-  }
-  
-  .stat-card:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 1.8rem;
   }
   
   .stat-value {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
   }
-  
-  .stat-label {
-    font-size: 1rem;
-    opacity: 0.8;
-  }
-  
-  .team-card {
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    overflow: hidden;
-  }
-  
-  .team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .team-card img {
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .team-card:hover img {
-    transform: scale(1.05);
-  }
-  
-  .testimonials-section {
-    background-color: #f8f9fa;
-  }
-  
-  .testimonial-item {
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-  
-  .testimonial-content {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #555;
-  }
-  
-  .author-image img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-  }
-  
-  .author-name {
-    font-weight: bold;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .about-hero h1 {
-      font-size: 2.5rem;
-    }
-    
-    .stat-value {
-      font-size: 2rem;
-    }
-    
-    .team-card img {
-      height: 200px;
-    }
-  }
+}
+ 
+/* Team Social Icons */
+.team-social {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(52, 152, 219, 0.9);
+  padding: 10px;
+  transition: all 0.3s ease;
+  gap: 15px;
+}
+
+.team-card:hover .team-social {
+  bottom: 0;
+}
+
+
+
+.team-social p {
+  color: white;
+  /* text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); */
+}
+

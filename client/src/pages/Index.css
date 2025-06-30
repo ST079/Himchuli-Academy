@@ -286,6 +286,11 @@ body {
   }
 }
 
-@media (max-width: 480px) {
- 
+.event-card {
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

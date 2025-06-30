@@ -101,8 +101,8 @@ const BeyondAcademics = () => {
       {/* Hero Section */}
       <div className="hero-section text-center py-5 mb-4">
         <Container>
-          <h1 className="display-4">Beyond Academics</h1>
-          <p className="lead">
+          <h1 className="display-4 fw-bolder text-white">Beyond Academics</h1>
+          <p className="lead text-white">
             Exploring talents, building character, and creating memories
           </p>
         </Container>
@@ -123,12 +123,12 @@ const BeyondAcademics = () => {
                 <Carousel.Caption>
                   <h3>{activity.title}</h3>
                   <p>{activity.short_description}</p>
-                  <Button
+                  {/* <Button
                     variant="outline-light"
                     href={`/beyond-academics/${activity.id}`}
                   >
                     Learn More
-                  </Button>
+                  </Button> */}
                 </Carousel.Caption>
               </Carousel.Item>
             ))}
@@ -178,12 +178,12 @@ const BeyondAcademics = () => {
                       <Card.Text>{activity.short_description}</Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                      <Button
+                      {/* <Button
                         variant="outline-primary"
                         href={`/beyond-academics/${activity.id}`}
                       >
                         View Details
-                      </Button>
+                      </Button> */}
                     </Card.Footer>
                   </Card>
                 </Col>

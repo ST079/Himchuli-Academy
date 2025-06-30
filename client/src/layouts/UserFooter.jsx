@@ -162,14 +162,14 @@ const UserFooter = () => {
                     MadhyapurThimi -07, Bhaktapur
                   </span>
                 </p>
-                <p className="d-flex align-items-center gap-1">
-                  <i className="fas fa-envelope mr-3"></i>{" "}
-                  <span style={{ fontSize: "15px" }}>
-                    <span className="mt-3 pointer">
-                      <Email />
+                <p >    
+                    <i className="fas fa-envelope mr-3"></i>{" "}
+                    <span style={{ fontSize: "15px" }}>
+                      <span className="mt-3 pointer">
+                        <Email />
+                      </span>
                     </span>
-                  </span>
-                </p>
+                  </p>
                 <p>
                   <i className="fas fa-phone mr-3"></i>{" "}
                   <span style={{ fontSize: "15px" }}>01 6638441</span>

@@ -92,8 +92,10 @@ const NewsPage = () => {
       {/* Hero Section */}
       <div className="news-hero text-center py-5 mb-4">
         <Container>
-          <h1 className="display-4 fw-bolder">Himchuli Academy News</h1>
-          <p className="lead">
+          <h1 className="display-4 fw-bolder text-white">
+            Himchuli Academy News
+          </h1>
+          <p className="lead text-white">
             Stay updated with the latest announcements and happenings
           </p>
         </Container>
@@ -140,7 +142,7 @@ const NewsPage = () => {
                     {item.image && (
                       <div className="mb-3">
                         <img
-                          src={`http://yourdomain.com/uploads/news/${item.image}`}
+                          src={`http://localhost/database/uploads/news/${item.image}`}
                           alt={item.title}
                           className="img-fluid rounded"
                         />
@@ -208,7 +210,12 @@ const NewsPage = () => {
                 )}
               </ListGroup>
               <Card.Footer className="text-center">
-                <Button variant="link" size="sm" href="/contact" className="text-decoration-none">
+                <Button
+                  variant="link"
+                  size="sm"
+                  href="/contact"
+                  className="text-decoration-none"
+                >
                   <i className="bi bi-envelope-fill"></i>
                   Contact Us for More Detail
                 </Button>

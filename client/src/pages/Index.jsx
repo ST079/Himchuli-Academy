@@ -7,17 +7,22 @@ import Events from "../components/Events";
 import TypewriterEffect from "../components/TypewriterEffect";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Carousel } from "react-bootstrap";
 
 
 const Index = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [announcements, setAnnouncements] = useState([]);
+  const [beyondAcademics, setBeyondAcademics] = useState([]);
   const [loading, setLoading] = useState({
     announcements: true,
+    beyondAcademics: true,
   });
   const [error, setError] = useState({
     announcements: null,
+    beyondAcademics: null,
   });
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const fetchAnnouncements = async () => {
@@ -38,8 +43,39 @@ const Index = () => {
       }
     };
 
+    const fetchBeyondAcademics = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost/database/get_beyond_academics.php"
+        );
+        if (!response.ok) throw new Error("Failed to fetch beyond academics");
+
+        const data = await response.json();
+        if (!data.success) throw new Error(data.error || "Invalid data");
+        setBeyondAcademics(data.activities);
+      } catch (err) {
+        setError((prev) => ({ ...prev, beyondAcademics: err.message }));
+      } finally {
+        setLoading((prev) => ({ ...prev, beyondAcademics: false }));
+      }
+    };
+
     fetchAnnouncements();
+    fetchBeyondAcademics();
   }, []);
+
+  console.log("Beyond Academics Data:", beyondAcademics);
+  
+
+  // Auto-rotate carousel every 3 seconds
+  useEffect(() => {
+    if (beyondAcademics.length > 0) {
+      const interval = setInterval(() => {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % beyondAcademics.length);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [beyondAcademics]);
 
   // Loading state component
   const LoadingPlaceholder = () => (
@@ -165,8 +201,8 @@ const Index = () => {
                   <h3 className="fs-6 fw-bold">Admission Process</h3>
                   <p className="card-text fs-6">
                     Welcome to the Himchuli Academy Admissions. We request you
-                    to fill out the application forms online. <br /> Click the button below to
-                    apply now.
+                    to fill out the application forms online. <br /> Click the
+                    button below to apply now.
                   </p>
                   <Link to="/apply-now" className="btn nav-btn">
                     Get Forms
@@ -317,8 +353,8 @@ const Index = () => {
               <div className="container-fluid py-5 blogs-news">
                 <h1 className="display-5 fw-bold"> 📚 News & Events</h1>
                 <p className="col-md-8 fs-6">
-                  Welcome to our Blog and News section—your go-to source for the
-                  latest updates, stories, and insights from our school
+                  Welcome to our News and Events section—your go-to source for
+                  the latest updates, stories, and insights from our school
                   community. From academic achievements and student spotlights
                   to event recaps and important announcements, stay connected
                   with everything happening on campus. Whether you're a student,
@@ -336,25 +372,41 @@ const Index = () => {
             <div className="row container">
               <div className="latest-updates text-dark mb-4 d-flex justify-content-between align-items-center">
                 <h2 className="display-5 fw-bold">Latest Updates</h2>
-                <Link to={"./blogs-news"}>
-                  {" "}
-                  <p className="fs-6">View All</p>{" "}
+                <Link to={"news-events"}>
+                  <p className="fs-6">View All</p>
                 </Link>
               </div>
-              <Events
-                img="../../images/blogs-news/1.jpg"
-                title="A Refreshing Escape to Fulchowki 🌿"
-                description="Escape the city buzz and unwind in the serene hills of Fulchowki. Surrounded by lush forests, cool breezes, and peaceful trails, it's the perfect spot to relax, reconnect with nature, and recharge your mind."
-              ></Events>
 
-              <Events
-                img="../../images/blogs-news/2.jpg"
-                title="🎓 Graduation Ceremony – Pre-Primary Completion 2081"
-                description="A joyful celebration marking the first big milestone in our
-                    little learners’ journey! With smiles, songs, and proud
-                    moments, our pre-primary graduates took their first step
-                    toward a bright future. Congratulations, Class of 2081!"
-              ></Events>
+              {loading.beyondAcademics ? (
+                <LoadingPlaceholder />
+              ) : error.beyondAcademics ? (
+                <ErrorMessage message={error.beyondAcademics} />
+              ) : (
+                <div className="row">
+                  {beyondAcademics.slice(0, 2).map((event, index) => (
+                    <div className="col-md-6 mb-4" key={index}>
+                      <div
+                        className="event-card"
+                        style={{
+                          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost/database/uploads/beyond_academics/${event.image})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          height: "300px",
+                          borderRadius: "10px",
+                          padding: "20px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "flex-end",
+                        }}
+                      >
+                        <h3 className="fw-bold">{event.title}</h3>
+                        <p>{event.short_description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -411,10 +463,10 @@ const ApplyModal = (props) => {
             to={
               "https://ingrails.com/school/admission/form/himchuli-academy?fbclid=IwY2xjawJwEa5leHRuA2FlbQIxMAABHiz0aJHg1MfzmjyUvOHwh3tHMui5P1nNqiFB3bMPEvecf0EUFzWqBMrhACLK_aem_YKxBYbckSYBhuODSyprtHw"
             }
+            target="_blank"
           >
             Apply Here
           </Link>
-          
         </p>
       </Modal.Body>
       <Modal.Footer>
