@@ -11,6 +11,7 @@ import BeyondAcademics from "./pages/BeyondAcademics";
 import Contact from "./pages/Contact";
 import NewsPage from "./pages/NewsPage";
 import NotFound from "./pages/NotFound";
+import NewsDetail from "./pages/NewsDetail";
 import "./App.css"
 
 const App = () => {
@@ -36,7 +37,8 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/beyond-academics" element={<BeyondAcademics />} />
-            <Route path="/news" element={<NewsPage />} />
+            <Route path="/news-events" element={<NewsPage />} />
+            <Route path="/news-events/:id" element={<NewsDetail />} />
           </Route>
 
 

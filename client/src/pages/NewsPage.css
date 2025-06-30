@@ -1,56 +1,44 @@
-.blogs-page {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.news-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.news-hero {
+  background: var(--primary-color);
+  color: white;
+}
+
+.section-title {
+  color: #2c3e50;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+}
+
+.news-card {
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.important-news {
+  border-left: 4px solid #dc3545;
+}
+
+@media (max-width: 768px) {
+  .news-hero h1 {
+    font-size: 2.5rem;
   }
-  
-  .blog-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('https://via.placeholder.com/1920x600?text=Himchuli+Blogs') center/cover no-repeat;
-    color: white;
-  }
-  
-  .section-title {
-    color: #2c3e50;
-    position: relative;
-    padding-bottom: 10px;
-  }
-  
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: #3498db;
-  }
-  
-  .featured-blog-card {
-    border: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
-  .blog-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  }
-  
-  .blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .newsletter-section {
-    background-color: #f8f9fa;
-  }
-  
-  @media (max-width: 768px) {
-    .featured-blog-card .col-md-6 {
-      width: 100%;
-    }
-    
-    .blog-hero h1 {
-      font-size: 2.5rem;
-    }
-  }
+}

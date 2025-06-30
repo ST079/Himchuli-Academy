@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import "./Index.css";
 import YouTubeEmbed from "../components/YoutubeEmbed";
 import { Link } from "react-router-dom";
@@ -11,6 +11,52 @@ import Modal from "react-bootstrap/Modal";
 
 const Index = () => {
   const [modalShow, setModalShow] = React.useState(false);
+  const [announcements, setAnnouncements] = useState([]);
+  const [loading, setLoading] = useState({
+    announcements: true,
+  });
+  const [error, setError] = useState({
+    announcements: null,
+  });
+
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost/database/get_announcements.php"
+        );
+        if (!response.ok) throw new Error("Failed to fetch announcements");
+
+        const data = await response.json();
+        if (!data.success) throw new Error(data.error || "Invalid data");
+
+        setAnnouncements(data.announcements);
+      } catch (err) {
+        setError((prev) => ({ ...prev, announcements: err.message }));
+      } finally {
+        setLoading((prev) => ({ ...prev, announcements: false }));
+      }
+    };
+
+    fetchAnnouncements();
+  }, []);
+
+  // Loading state component
+  const LoadingPlaceholder = () => (
+    <div className="placeholder-glow">
+      <p className="placeholder col-12"></p>
+      <p className="placeholder col-12"></p>
+      <p className="placeholder col-12"></p>
+    </div>
+  );
+
+  // Error state component
+  const ErrorMessage = ({ message }) => (
+    <div className="alert alert-danger">
+      <small>{message}</small>
+    </div>
+  );
+
   return (
     <div>
       <div className="landing-page-img"></div>
@@ -102,19 +148,24 @@ const Index = () => {
             <div className="boards d-flex flex-column fs-4 justify-content-center align-items-center">
               <div className="announcements box line">
                 <h3 className="fs-6 fw-bold">Announcements</h3>
-                <p className="card-text fs-6">
-                  Classes are Closed For Now <br />
-                  Result is On 30th Chaitra ( 7:30 to 9:30 AM ) <br />
-                  New Session Starts on 7st Baisakh <br />
-                </p>
+                {loading.announcements ? (
+                  <LoadingPlaceholder />
+                ) : error.announcements ? (
+                  <ErrorMessage message={error.announcements} />
+                ) : (
+                  announcements.map((item, index) => (
+                    <p key={index} className="card-text fs-6">
+                      {item}
+                    </p>
+                  ))
+                )}
               </div>
               <div className="admission box line">
                 <div className="card-body">
                   <h3 className="fs-6 fw-bold">Admission Process</h3>
                   <p className="card-text fs-6">
                     Welcome to the Himchuli Academy Admissions. We request you
-                    to fill out the application forms online. Currently, we are
-                    accepting applications upto IX . Click the button below to
+                    to fill out the application forms online. <br /> Click the button below to
                     apply now.
                   </p>
                   <Link to="/apply-now" className="btn nav-btn">
@@ -264,7 +315,7 @@ const Index = () => {
           <div className="container">
             <div className="p-5 mb-4 bg-body-tertiary rounded-3">
               <div className="container-fluid py-5 blogs-news">
-                <h1 className="display-5 fw-bold"> 📚 Blogs & News</h1>
+                <h1 className="display-5 fw-bold"> 📚 News & Events</h1>
                 <p className="col-md-8 fs-6">
                   Welcome to our Blog and News section—your go-to source for the
                   latest updates, stories, and insights from our school
@@ -274,7 +325,7 @@ const Index = () => {
                   parent, teacher, or alumni, there's always something inspiring
                   to read and share.
                 </p>
-                <Link to={"/blogs-news"}>
+                <Link to={"/news-events"}>
                   <button className="btn nav-btn btn-lg blog-btn" type="button">
                     Explore !!!
                   </button>
@@ -285,14 +336,17 @@ const Index = () => {
             <div className="row container">
               <div className="latest-updates text-dark mb-4 d-flex justify-content-between align-items-center">
                 <h2 className="display-5 fw-bold">Latest Updates</h2>
-                <Link to={"./blogs-news"}> <p className="fs-6">View All</p> </Link>
+                <Link to={"./blogs-news"}>
+                  {" "}
+                  <p className="fs-6">View All</p>{" "}
+                </Link>
               </div>
               <Events
                 img="../../images/blogs-news/1.jpg"
                 title="A Refreshing Escape to Fulchowki 🌿"
                 description="Escape the city buzz and unwind in the serene hills of Fulchowki. Surrounded by lush forests, cool breezes, and peaceful trails, it's the perfect spot to relax, reconnect with nature, and recharge your mind."
               ></Events>
-                
+
               <Events
                 img="../../images/blogs-news/2.jpg"
                 title="🎓 Graduation Ceremony – Pre-Primary Completion 2081"
@@ -320,7 +374,7 @@ const Index = () => {
                   <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark" />
                 </div>
                 <Button variant="primary" onClick={() => setModalShow(true)}>
-                 Book Your Seat Now!!
+                  Book Your Seat Now!!
                 </Button>
 
                 <ApplyModal
