@@ -12,6 +12,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./NewsPage.css";
 import Pagination from "../components/Pagination"; // Import the pagination component
+import { Link } from "react-router-dom";
 
 const NewsPage = () => {
   const [news, setNews] = useState([]);
@@ -28,7 +29,7 @@ const NewsPage = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost/database/get_news.php?page=${page}&per_page=${limit}`
+        `https://himchuliacademy.edu.np/database/get_news.php?page=${page}&per_page=${limit}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -142,19 +143,20 @@ const NewsPage = () => {
                     {item.image && (
                       <div className="mb-3">
                         <img
-                          src={`http://localhost/database/uploads/news/${item.image}`}
+                          src={`https://himchuliacademy.edu.np/database/uploads/news/${item.image}`}
                           alt={item.title}
                           className="img-fluid rounded"
                         />
                       </div>
                     )}
+                    <Link to={`/news-events/${item.id}`}>
                     <Button
                       variant="outline-primary"
                       size="sm"
-                      href={`/news-events/${item.id}`}
-                    >
+                      >
                       Read More
                     </Button>
+                      </Link>
                   </Card.Body>
                 </Card>
               ))

@@ -25,7 +25,7 @@ const AboutUs = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost/database/about_us.php");
+        const response = await fetch("https://himchuliacademy.edu.np/database/about_us.php");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -124,7 +124,7 @@ const AboutUs = () => {
                 <Card.Body className="text-center p-4">
                   <div className="leader-image mb-3 mx-auto">
                     <img
-                      src={`http://localhost/database/uploads/team/chairperson.jpg`}
+                      src={`https://himchuliacademy.edu.np/database/uploads/team/chairperson.jpg`}
                       alt="Chairperson"
                       className="img-fluid rounded-circle"
                     />
@@ -161,7 +161,7 @@ const AboutUs = () => {
                 <Card.Body className="text-center p-4">
                   <div className="leader-image mb-3 mx-auto">
                     <img
-                      src={`http://localhost/database/uploads/team/principal.jpg`}
+                      src={`https://himchuliacademy.edu.np/database/uploads/team/principal.jpg`}
                       alt="Principal"
                       className="img-fluid rounded-circle"
                     />
@@ -195,7 +195,7 @@ const AboutUs = () => {
                 <Card.Body className="text-center p-4">
                   <div className="leader-image mb-3 mx-auto">
                     <img
-                      src={`http://localhost/database/uploads/team/vice_principal.jpg`}
+                      src={`https://himchuliacademy.edu.np/database/uploads/team/vice_principal.jpg`}
                       alt="Vice Principal"
                       className="img-fluid rounded-circle "
                     />
@@ -239,7 +239,7 @@ const AboutUs = () => {
             <Col lg={6} className="mb-4 mb-lg-0">
               <div className="history-image-container">
                 <img
-                  src={`http://localhost/database/uploads/about/${aboutData?.about?.history_image}`}
+                  src={`https://himchuliacademy.edu.np/database/uploads/about/${aboutData?.about?.history_image}`}
                   alt="School History"
                   className="img-fluid rounded shadow"
                 />
@@ -341,7 +341,7 @@ const AboutUs = () => {
                   <div className="team-image-container">
                     <Card.Img
                       variant="top"
-                      src={`http://localhost/database/uploads/team/${member.photo}`}
+                      src={`https://himchuliacademy.edu.np/database/uploads/team/${member.photo}`}
                       alt={member.name}
                     />
                     <div className="team-social">

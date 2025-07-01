@@ -28,7 +28,7 @@ const Index = () => {
     const fetchAnnouncements = async () => {
       try {
         const response = await fetch(
-          "http://localhost/database/get_announcements.php"
+          "https://himchuliacademy.edu.np/database/get_announcements.php"
         );
         if (!response.ok) throw new Error("Failed to fetch announcements");
 
@@ -46,7 +46,7 @@ const Index = () => {
     const fetchBeyondAcademics = async () => {
       try {
         const response = await fetch(
-          "http://localhost/database/get_beyond_academics.php"
+          "https://himchuliacademy.edu.np/database/get_beyond_academics.php"
         );
         if (!response.ok) throw new Error("Failed to fetch beyond academics");
 
@@ -388,7 +388,7 @@ const Index = () => {
                       <div
                         className="event-card"
                         style={{
-                          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost/database/uploads/beyond_academics/${event.image})`,
+                          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://himchuliacademy.edu.np/database/uploads/beyond_academics/${event.image})`,
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           height: "300px",

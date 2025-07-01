@@ -24,7 +24,7 @@ const NewsDetail = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `http://localhost/database/get_news_detail.php?id=${id}`
+          `https://himchuliacademy.edu.np/database/get_news_detail.php?id=${id}`
         );
 
         if (!response.ok) throw new Error("Network response was not ok");
@@ -99,7 +99,7 @@ const NewsDetail = () => {
           {newsItem.image && (
             <Card.Img
               variant="top"
-              src={`http://localhost/database/uploads/news/${newsItem.image}`}
+              src={`https://himchuliacademy.edu.np/database/uploads/news/${newsItem.image}`}
               alt={newsItem.title}
             />
           )}

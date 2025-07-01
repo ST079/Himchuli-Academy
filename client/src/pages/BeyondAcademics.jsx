@@ -31,7 +31,7 @@ const BeyondAcademics = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost/database/get_beyond_academics.php?page=${pagination.currentPage}&per_page=${pagination.itemsPerPage}`
+          `https://himchuliacademy.edu.np/database/get_beyond_academics.php?page=${pagination.currentPage}&per_page=${pagination.itemsPerPage}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -117,7 +117,7 @@ const BeyondAcademics = () => {
               <Carousel.Item key={activity.id}>
                 <img
                   className="d-block w-100 carousel-image"
-                  src={`http://localhost/database/uploads/beyond_academics/${activity.image}`}
+                  src={`https://himchuliacademy.edu.np/database/uploads/beyond_academics/${activity.image}`}
                   alt={activity.title}
                 />
                 <Carousel.Caption>
@@ -164,7 +164,7 @@ const BeyondAcademics = () => {
                   <Card className="h-100 activity-card">
                     <Card.Img
                       variant="top"
-                      src={`http://localhost/database/uploads/beyond_academics/${activity.image}`}
+                      src={`https://himchuliacademy.edu.np/database/uploads/beyond_academics/${activity.image}`}
                       alt={activity.title}
                     />
                     <Card.Body>
