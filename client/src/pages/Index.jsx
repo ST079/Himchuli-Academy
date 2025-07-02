@@ -347,7 +347,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Blogs & News */}
+          {/* News-events*/}
           <div className="container">
             <div className="p-5 mb-4 bg-body-tertiary rounded-3">
               <div className="container-fluid py-5 blogs-news">
@@ -372,7 +372,7 @@ const Index = () => {
             <div className="row container">
               <div className="latest-updates text-dark mb-4 d-flex justify-content-between align-items-center">
                 <h2 className="display-5 fw-bold">Latest Updates</h2>
-                <Link to={"news-events"}>
+                <Link to={"beyond-academics"}>
                   <p className="fs-6">View All</p>
                 </Link>
               </div>
@@ -382,9 +382,9 @@ const Index = () => {
               ) : error.beyondAcademics ? (
                 <ErrorMessage message={error.beyondAcademics} />
               ) : (
-                <div className="row">
+                <div className="row event">
                   {beyondAcademics.slice(0, 2).map((event, index) => (
-                    <div className="col-md-6 mb-4" key={index}>
+                    <div className="col-md-6 mb-4 " key={index}>
                       <div
                         className="event-card"
                         style={{

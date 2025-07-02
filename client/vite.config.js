@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://himchuliacademy.edu.np",
+        target: "https://himchuliacademy.edu.np/",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },

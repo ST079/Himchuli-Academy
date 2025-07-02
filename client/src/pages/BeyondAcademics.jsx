@@ -120,9 +120,9 @@ const BeyondAcademics = () => {
                   src={`https://himchuliacademy.edu.np/database/uploads/beyond_academics/${activity.image}`}
                   alt={activity.title}
                 />
-                <Carousel.Caption>
+                <Carousel.Caption className="carousel-caption">
                   <h3>{activity.title}</h3>
-                  <p>{activity.short_description}</p>
+                  <p className="beyond-description">{activity.short_description}</p>
                   {/* <Button
                     variant="outline-light"
                     href={`/beyond-academics/${activity.id}`}

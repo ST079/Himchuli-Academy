@@ -11,7 +11,7 @@ const Admission = () => {
     const fetchFAQs = async () => {
       try {
         const response = await fetch(
-          "/api/database/faq.php?category=admission"
+          "https://himchuliacademy.edu.np/database/faq.php?category=admission"
         );
 
         if (!response.ok) {
